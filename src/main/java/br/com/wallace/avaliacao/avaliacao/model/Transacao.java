@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "conta_id")
@@ -26,10 +26,10 @@ public class Transacao {
     private Double valor;
     private LocalDateTime dataTransacao;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public Conta getConta() {

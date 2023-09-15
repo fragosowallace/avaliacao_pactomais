@@ -10,5 +10,5 @@ import br.com.wallace.avaliacao.avaliacao.model.TipoOperacao;
 @Repository
 public interface TipoOperacaoRepository extends CrudRepository<TipoOperacao, Integer> {
 
-    Optional<TipoOperacao> findById(Long tipoOperacaoId);
+    Optional<TipoOperacao> findById(int tipoOperacaoId);
 }

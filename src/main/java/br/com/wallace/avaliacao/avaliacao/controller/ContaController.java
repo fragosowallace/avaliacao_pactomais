@@ -33,7 +33,7 @@ public class ContaController {
     }
 
     @GetMapping("/{contaId}")
-    public ResponseEntity<Conta> consultarConta(@PathVariable Long contaId) {
+    public ResponseEntity<Conta> consultarConta(@PathVariable int contaId) {
         Optional<Conta> conta = contaRepository.findById(contaId);
         return conta.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }

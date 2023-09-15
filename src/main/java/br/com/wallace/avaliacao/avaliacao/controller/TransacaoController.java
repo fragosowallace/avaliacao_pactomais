@@ -31,8 +31,8 @@ public class TransacaoController {
 
     @PostMapping
     public ResponseEntity<?> criarTransacao(@RequestBody Map<String, Object> requestBody) {
-        Long contaId = Long.valueOf(requestBody.get("conta_id").toString());
-        Long tipoOperacaoId = Long.valueOf(requestBody.get("tipo_operacao_id").toString());
+        int contaId = Integer.parseInt(requestBody.get("conta_id").toString());
+        int tipoOperacaoId = Integer.parseInt(requestBody.get("tipo_operacao_id").toString());
         Double valor = Double.valueOf(requestBody.get("valor").toString());
 
         Conta conta = contaRepository.findById(contaId).orElse(null);
