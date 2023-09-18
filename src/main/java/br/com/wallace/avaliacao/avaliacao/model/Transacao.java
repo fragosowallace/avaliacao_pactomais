@@ -23,6 +23,10 @@ public class Transacao {
     @JoinColumn(name = "tipo_operacao_id")
     private TipoOperacao tipoOperacao;
 
+    @ManyToOne
+    @JoinColumn(name = "limite_conta_id")
+    private LimiteConta limiteConta;
+
     private Double valor;
     private LocalDateTime dataTransacao;
 
@@ -41,8 +45,8 @@ public class Transacao {
     public TipoOperacao getTipoOperacao() {
         return tipoOperacao;
     }
-    public void setTipoOperacao(TipoOperacao tipoOperacao) {
-        this.tipoOperacao = tipoOperacao;
+    public void setTipoOperacao(TipoOperacao tipo) {
+        this.tipoOperacao = tipo;
     }
     public Double getValor() {
         return valor;
@@ -55,5 +59,11 @@ public class Transacao {
     }
     public void setDataTransacao(LocalDateTime dataTransacao) {
         this.dataTransacao = dataTransacao;
+    }
+    public LimiteConta getLimiteConta() {
+        return limiteConta;
+    }
+    public void setLimiteConta(LimiteConta limiteConta) {
+        this.limiteConta = limiteConta;
     }
 }
